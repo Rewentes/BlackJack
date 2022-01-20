@@ -3,4 +3,4 @@ project(BlackJack C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(BlackJack main.c)
+add_executable(BlackJack main.c Logic.md)

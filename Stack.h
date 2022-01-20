@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
+#include <time.h>
 
 typedef struct Node {
   char suit[20];
@@ -61,8 +61,8 @@ Node *LAST_element(Node *head) { // нахождение последнего э
         head = head->next;
     }
     return head;
-} 
-
+}
+/*
 void pushBack(Node *head, char suit_in[20], char name_in[20], int value_in) { // добавление в начало
     Node *last = LAST_element(head);
     Node *tmp = (Node*) malloc(sizeof(Node));
@@ -75,7 +75,7 @@ void pushBack(Node *head, char suit_in[20], char name_in[20], int value_in) { //
     tmp->next = NULL;
     last->next = tmp;
 } 
-
+*/
 //[new] -> [] -> [] -> NULL
 
 void insert(Node *head, unsigned n, char suit_in[20], char name_in[20], int value_in) {
@@ -105,13 +105,14 @@ void insert(Node *head, unsigned n, char suit_in[20], char name_in[20], int valu
 // [head] -> [2, next] -> [3, next] -> NULL
 
 void tusov(Node **head){
+    srand(time(NULL));
     for (int i = 0; i < 100; i++) {
         Node del = delete_N(head, (rand()%52));
         //push(head, del.suit, del.name);
         insert(*head, rand()%52, del.suit, del.name, del.value);
     }
 }
-
+/*
 void printList(const Node *head) {
     while(head) {
         printf("%d ", head->value);
@@ -121,7 +122,8 @@ void printList(const Node *head) {
         printf("\n");
   } 
   printf("\n");
-}
 
+}
+  */
 
 
